@@ -13,7 +13,7 @@ public class Lotacao {
     private Long id;
     @NotBlank
     @Column(length = 400)
-    private String descricao;
+     private String descricao;
     private Date dataCdastro;
 
 }
