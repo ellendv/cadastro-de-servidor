@@ -4,6 +4,7 @@ import br.com.ambiente.testejava.model.Servidor;
 import br.com.ambiente.testejava.model.dto.ServidorDto;
 import br.com.ambiente.testejava.service.ServidorService;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,14 +14,14 @@ import static org.springframework.http.HttpStatus.CREATED;
 
 @RestController
 @RequestMapping("/servidor")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ServidorContoller {
 
     private ServidorService servidorService;
 
     @PostMapping("/cadastro")
-    public ResponseEntity cadastro(@Valid @RequestBody ServidorDto servidorDto) {
-        Servidor servidor = servidorService.cadastro(servidorDto);
+    public ResponseEntity<Servidor> cadastro(@Valid @RequestBody ServidorDto servidorDto) {
+        Servidor servidor = servidorService.cadastrarServidor(servidorDto);
         return ResponseEntity.status(CREATED).body(servidor);
     }
 

@@ -12,8 +12,8 @@ public class Lotacao {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank
-    @Column(length = 400)
-     private String descricao;
+    @Column(name = "descricao", length = 400)
+     private String nome;
     private Date dataCdastro;
 
 }
