@@ -3,8 +3,6 @@ package br.com.ambiente.testejava.controller;
 import br.com.ambiente.testejava.model.Servidor;
 import br.com.ambiente.testejava.model.dto.ServidorDto;
 import br.com.ambiente.testejava.service.ServidorService;
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,10 +12,13 @@ import static org.springframework.http.HttpStatus.CREATED;
 
 @RestController
 @RequestMapping("/servidor")
-@RequiredArgsConstructor
 public class ServidorContoller {
 
-    private ServidorService servidorService;
+    private final ServidorService servidorService;
+
+    public ServidorContoller(ServidorService servidorService) {
+        this.servidorService = servidorService;
+    }
 
     @PostMapping("/cadastro")
     public ResponseEntity<Servidor> cadastro(@Valid @RequestBody ServidorDto servidorDto) {
