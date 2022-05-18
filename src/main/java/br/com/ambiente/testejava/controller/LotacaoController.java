@@ -25,7 +25,7 @@ public class LotacaoController {
         return ResponseEntity.status(CREATED).body(lotacao);
     }
 
-    @GetMapping({"/nome"})
+    @GetMapping({"/{nome}"})
     public Lotacao lotacaoPorNome(@PathVariable("nome") String nome){
         return lotacaoService.buscarNome(nome);
     }
