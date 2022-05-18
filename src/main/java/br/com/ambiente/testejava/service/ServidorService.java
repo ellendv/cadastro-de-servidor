@@ -10,11 +10,9 @@ import org.springframework.stereotype.Service;
 public class ServidorService {
 
     private final ServidorRepository servidorRepository;
-    private final ModelMapper modelMapper;
 
-    public ServidorService(ServidorRepository servidorRepository, ModelMapper modelMapper) {
+    public ServidorService(ServidorRepository servidorRepository) {
         this.servidorRepository = servidorRepository;
-        this.modelMapper = modelMapper;
     }
 
     public Servidor cadastrarServidor(ServidorDto servidorDto){

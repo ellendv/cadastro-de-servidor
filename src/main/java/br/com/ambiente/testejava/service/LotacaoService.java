@@ -10,15 +10,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class LotacaoService {
     private final LotacaoRepository lotacaoRepository;
-    private final ModelMapper modelMapper;
 
-    public LotacaoService(LotacaoRepository lotacaoRepository, ModelMapper modelMapper) {
+    public LotacaoService(LotacaoRepository lotacaoRepository) {
         this.lotacaoRepository = lotacaoRepository;
-        this.modelMapper = modelMapper;
     }
 
     public Lotacao cadastrarLotacao(LotacaoDto lotacaoDto){
-        Lotacao lotacao = modelMapper.map(lotacaoDto, Lotacao.class);
+        Lotacao lotacao = new Lotacao(lotacaoDto.getNome(), lotacaoDto.getDataCadastro());
         return lotacaoRepository.save(lotacao);
     }
     public Lotacao buscarNome(String nome) {
