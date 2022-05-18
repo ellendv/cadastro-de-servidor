@@ -18,6 +18,6 @@ public class LotacaoService {
         return lotacaoRepository.save(lotacao);
     }
     public Lotacao buscarNome(String nome) {
-        return lotacaoRepository.findBynome(nome);
+        return lotacaoRepository.findByNome(nome);
     }
 }

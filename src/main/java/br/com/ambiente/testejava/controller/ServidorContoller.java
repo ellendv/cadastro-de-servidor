@@ -27,13 +27,8 @@ public class ServidorContoller {
 
     @GetMapping("/{matricula}")
     public Servidor buscarPorMatricula(@PathVariable("matricula") String matricula) {
-        try {
-            return servidorService.buscarMatricula(matricula);
+        return servidorService.buscarMatricula(matricula);
 
-        } catch (Exception e) {
-            throw new RuntimeException(e.getMessage() + "mátricula invalida");
-        }
     }
-
 }
 
