@@ -13,11 +13,11 @@ public class Lotacao {
     @NotBlank
     @Column(name = "descricao", length = 400)
      private String nome;
-    private Date dataCdastro;
+    private Date dataCadastro;
 
-    public Lotacao(String nome, Date dataCdastro) {
+    public Lotacao(String nome, Date dataCadastro) {
         this.nome = nome;
-        this.dataCdastro = dataCdastro;
+        this.dataCadastro = dataCadastro;
     }
 
     public Lotacao() {
@@ -40,12 +40,11 @@ public class Lotacao {
         this.nome = nome;
     }
 
-    public Date getDataCdastro() {
-        return dataCdastro;
+    public Date getDataCadastro() {
+        return dataCadastro;
     }
 
-    public void setDataCdastro(Date dataCdastro) {
-        this.dataCdastro = dataCdastro;
+    public void setDataCdastro(Date dataCadastro) {
+        this.dataCadastro = dataCadastro;
     }
-
 }

@@ -1,6 +1,7 @@
 package br.com.ambiente.testejava.service;
 
 import br.com.ambiente.testejava.model.Lotacao;
+import br.com.ambiente.testejava.model.Servidor;
 import br.com.ambiente.testejava.model.dto.LotacaoDto;
 import br.com.ambiente.testejava.repositories.LotacaoRepository;
 import org.modelmapper.ModelMapper;

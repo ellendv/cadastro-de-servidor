@@ -21,7 +21,7 @@ public class ServidorContoller {
     }
 
     @PostMapping("/cadastro")
-    public ResponseEntity<Servidor> cadastro(@Valid @RequestBody ServidorDto servidorDto) {
+    public ResponseEntity<Servidor> cadastro(@RequestBody @Valid ServidorDto servidorDto) {
         Servidor servidor = servidorService.cadastrarServidor(servidorDto);
         return ResponseEntity.status(CREATED).body(servidor);
     }

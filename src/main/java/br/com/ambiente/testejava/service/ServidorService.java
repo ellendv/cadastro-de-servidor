@@ -18,8 +18,13 @@ public class ServidorService {
     }
 
     public Servidor cadastrarServidor(ServidorDto servidorDto){
-        Servidor servidor = modelMapper.map(servidorDto, Servidor.class);
+        final var servidor = new Servidor(
+                servidorDto.getNome(),
+                servidorDto.getMatricula(),
+                servidorDto.getDataCadastro()
+        );
         return servidorRepository.save(servidor);
+
     }
 
     public Servidor buscarMatricula(String matricula){
