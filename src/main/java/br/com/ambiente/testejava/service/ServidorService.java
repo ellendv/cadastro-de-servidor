@@ -24,7 +24,8 @@ public class ServidorService {
         final var servidor = new Servidor(
                 servidorDto.getNome(),
                 servidorDto.getMatricula(),
-                servidorDto.getDataCadastro()
+                servidorDto.getDataCadastro(),
+                servidorDto.getLotacaoId()
         );
         return servidorRepository.save(servidor);
 

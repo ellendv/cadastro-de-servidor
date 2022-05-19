@@ -1,6 +1,8 @@
 package br.com.ambiente.testejava.model;
 
 
+import br.com.ambiente.testejava.model.dto.LotacaoDto;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.Date;
@@ -19,15 +21,16 @@ public class Servidor {
     private Date dataCadastro;
     @ManyToOne
     @NotBlank
+    @JoinColumn(name = "id", nullable = false)
     private Lotacao lotacao;
 
 
 
-    public Servidor(String nome, String matricula, Date dataCadastro) {
+    public Servidor(String nome, String matricula, Date dataCadastro, Long lotacao) {
         this.nome = nome;
         this.matricula = matricula;
         this.dataCadastro = dataCadastro;
-        this.lotacao = lotacao;
+//        this.lotacao = lotacao;
     }
 
     public Servidor() {

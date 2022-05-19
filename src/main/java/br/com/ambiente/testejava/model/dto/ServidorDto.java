@@ -1,23 +1,20 @@
 package br.com.ambiente.testejava.model.dto;
 
-import br.com.ambiente.testejava.model.Lotacao;
-import lombok.Data;
-
 import java.util.Date;
 public class ServidorDto {
     private Long id;
     private String nome;
     private String matricula;
     private Date dataCadastro;
-    private LotacaoDto lotacaoDto;
+    private Long lotacaoId;
 
 
-    public ServidorDto(Long id, String nome, String matricula, Date dataCadastro, LotacaoDto lotacaoDto) {
+    public ServidorDto(Long id, String nome, String matricula, Date dataCadastro, Long lotacaoId) {
         this.id = id;
         this.nome = nome;
         this.matricula = matricula;
         this.dataCadastro = dataCadastro;
-        this.lotacaoDto = lotacaoDto;
+        this.lotacaoId = lotacaoId;
     }
 
 
@@ -33,8 +30,8 @@ public class ServidorDto {
         return dataCadastro;
     }
 
-    public LotacaoDto getLotacaoDto() {
-        return lotacaoDto;
+    public Long getLotacaoId() {
+        return lotacaoId;
     }
 
 

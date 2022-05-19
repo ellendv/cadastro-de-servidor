@@ -15,14 +15,15 @@ public class Lotacao {
      private String nome;
     private Date dataCadastro;
 
-    public Lotacao(String nome, Date dataCadastro) {
+    public Lotacao(Long id, String nome, Date dataCadastro) {
+        this.id = id;
         this.nome = nome;
         this.dataCadastro = dataCadastro;
     }
 
     public Lotacao() {
-
     }
+
 
     public Long getId() {
         return id;
