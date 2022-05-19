@@ -26,11 +26,11 @@ public class Servidor {
 
 
 
-    public Servidor(String nome, String matricula, Date dataCadastro, Long lotacao) {
+    public Servidor(String nome, String matricula, Date dataCadastro, Lotacao lotacao) {
         this.nome = nome;
         this.matricula = matricula;
         this.dataCadastro = dataCadastro;
-//        this.lotacao = lotacao;
+        this.lotacao = lotacao;
     }
 
     public Servidor() {
