@@ -21,7 +21,6 @@ public class Servidor {
     private Date dataCadastro;
     @ManyToOne
     @NotBlank
-    @JoinColumn(name = "id", nullable = false)
     private Lotacao lotacao;
 
 

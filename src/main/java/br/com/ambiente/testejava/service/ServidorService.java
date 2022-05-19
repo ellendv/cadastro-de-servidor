@@ -20,14 +20,8 @@ public class ServidorService {
 
     public Servidor cadastrarServidor(ServidorDto servidorDto){
         Lotacao lotacao = lotacaoRepository.findById(servidorDto.getId()).orElseThrow(()-> new RuntimeException("lotacão não encontrada"));
-        final var servidor = new Servidor(
-                servidorDto.getNome(),
-                servidorDto.getMatricula(),
-                servidorDto.getDataCadastro(),
-                lotacao
-        );
+        final var servidor = new Servidor(servidorDto.getNome(), servidorDto.getMatricula(), servidorDto.getDataCadastro(), lotacao);
         return servidorRepository.save(servidor);
-
     }
 
     public Servidor buscarMatricula(String matricula){
