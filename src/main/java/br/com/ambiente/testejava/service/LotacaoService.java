@@ -5,6 +5,8 @@ import br.com.ambiente.testejava.model.dto.LotacaoDto;
 import br.com.ambiente.testejava.repositories.LotacaoRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Calendar;
+
 @Service
 public class LotacaoService {
     private final LotacaoRepository lotacaoRepository;
@@ -14,10 +16,12 @@ public class LotacaoService {
     }
 
     public Lotacao cadastrarLotacao(LotacaoDto lotacaoDto){
-        Lotacao lotacao = new Lotacao(lotacaoDto.getId(), lotacaoDto.getNome(), lotacaoDto.getDataCadastro());
+        Calendar c = Calendar.getInstance();
+        Lotacao lotacao = new Lotacao(lotacaoDto.getId(), lotacaoDto.getNome(), c.getTime());
         return lotacaoRepository.save(lotacao);
     }
     public Lotacao buscarNome(String nome) {
-        return lotacaoRepository.findByNome(nome);
+        Lotacao lotacao=lotacaoRepository.findByNome(nome);
+        return lotacao;
     }
 }

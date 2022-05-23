@@ -9,7 +9,7 @@ public class ServidorDto {
     private Long lotacaoId;
 
 
-    public ServidorDto(Long id, String nome, String matricula, Date dataCadastro, Long lotacaoId) {
+    public ServidorDto(String nome, String matricula, Date dataCadastro, Long lotacaoId) {
         this.id = id;
         this.nome = nome;
         this.matricula = matricula;

@@ -12,6 +12,10 @@ public class LotacaoDto {
         this.dataCadastro = dataCadastro;
     }
 
+    public LotacaoDto() {
+
+    }
+
 
     public Long getId() {
         return id;
