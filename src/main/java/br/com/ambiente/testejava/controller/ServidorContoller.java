@@ -31,5 +31,11 @@ public class ServidorContoller {
         return servidorService.buscarMatricula(matricula);
 
     }
+
+    @PutMapping("{id}")
+    public ResponseEntity<Servidor> atualizar(@PathVariable("id") Long id, @RequestBody @Valid ServidorDto servidorDto) {
+         Servidor servidor = servidorService.atualizarServidor(id, servidorDto);
+        return ResponseEntity.status(CREATED).body(servidor);
+    }
 }
 

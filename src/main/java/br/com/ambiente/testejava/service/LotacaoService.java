@@ -24,4 +24,10 @@ public class LotacaoService {
         Lotacao lotacao=lotacaoRepository.findByNome(nome);
         return lotacao;
     }
+
+    public Lotacao atualizarLotacao(Long id, LotacaoDto lotacaoDto) {
+        Lotacao lotacao = lotacaoRepository.findById(id).orElseThrow(() -> new RuntimeException("lotacão não encontrada"));
+        lotacao.setNome(lotacaoDto.getNome());
+        return lotacao;
+    }
 }

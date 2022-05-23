@@ -29,5 +29,10 @@ public class LotacaoController {
     public Lotacao lotacaoPorNome(@PathVariable("nome") String nome){
         return lotacaoService.buscarNome(nome);
     }
+    @PutMapping("{id}")
+    public ResponseEntity<Lotacao> atualizar(@PathVariable("id") Long id, @RequestBody @Valid LotacaoDto lotacaoDto){
+        Lotacao lotacao = lotacaoService.atualizarLotacao(id, lotacaoDto);
+        return ResponseEntity.status(CREATED).body(lotacao);
+    }
 
 }
