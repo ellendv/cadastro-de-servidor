@@ -2,7 +2,6 @@ package br.com.ambiente.testejava.model.dto;
 
 import java.util.Date;
 public class ServidorDto {
-    private Long id;
     private String nome;
     private String matricula;
     private Date dataCadastro;
@@ -10,7 +9,6 @@ public class ServidorDto {
 
 
     public ServidorDto(String nome, String matricula, Date dataCadastro, Long lotacaoId) {
-        this.id = id;
         this.nome = nome;
         this.matricula = matricula;
         this.dataCadastro = dataCadastro;
@@ -35,7 +33,4 @@ public class ServidorDto {
     }
 
 
-    public Long getId() {
-        return id;
-    }
 }

@@ -17,7 +17,7 @@ public class LotacaoService {
 
     public Lotacao cadastrarLotacao(LotacaoDto lotacaoDto){
         Calendar c = Calendar.getInstance();
-        Lotacao lotacao = new Lotacao(lotacaoDto.getId(), lotacaoDto.getNome(), c.getTime());
+        Lotacao lotacao = new Lotacao(lotacaoDto.getNome(), c.getTime());
         return lotacaoRepository.save(lotacao);
     }
     public Lotacao buscarNome(String nome) {

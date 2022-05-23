@@ -24,7 +24,7 @@ public class ServidorService {
     }
 
     public Servidor cadastrarServidor(ServidorDto servidorDto){
-        Lotacao lotacao = lotacaoRepository.findById(servidorDto.getId()).orElseThrow(()-> new RuntimeException("lotacão não encontrada"));
+        Lotacao lotacao = lotacaoRepository.findById(servidorDto.getLotacaoId()).orElseThrow(()-> new RuntimeException("lotacão não encontrada"));
         Calendar c = Calendar.getInstance();
         final var servidor = new Servidor(servidorDto.getNome(), servidorDto.getMatricula(), c.getTime(), lotacao);
         return servidorRepository.save(servidor);

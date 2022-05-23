@@ -15,8 +15,7 @@ public class Lotacao {
      private String nome;
     private Date dataCadastro;
 
-    public Lotacao(Long id, String nome, Date dataCadastro) {
-        this.id = id;
+    public Lotacao(String nome, Date dataCadastro) {
         this.nome = nome;
         this.dataCadastro = dataCadastro;
     }
