@@ -1,7 +1,5 @@
 package br.com.ambiente.testejava.model;
 
-import lombok.Data;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.Date;
@@ -14,6 +12,7 @@ public class Lotacao {
     @Column(name = "descricao", length = 400)
      private String nome;
     private Date dataCadastro;
+
 
     public Lotacao(String nome, Date dataCadastro) {
         this.nome = nome;

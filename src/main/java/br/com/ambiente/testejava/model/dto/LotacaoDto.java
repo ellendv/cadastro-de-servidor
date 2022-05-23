@@ -14,7 +14,6 @@ public class LotacaoDto {
 
     }
 
-
     public String getNome() {
         return nome;
     }
@@ -23,6 +22,11 @@ public class LotacaoDto {
         return dataCadastro;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-
+    public void setDataCadastro(Date dataCadastro) {
+        this.dataCadastro = dataCadastro;
+    }
 }

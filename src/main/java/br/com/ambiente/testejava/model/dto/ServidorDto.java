@@ -32,5 +32,19 @@ public class ServidorDto {
         return lotacaoId;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public void setDataCadastro(Date dataCadastro) {
+        this.dataCadastro = dataCadastro;
+    }
+
+    public void setLotacaoId(Long lotacaoId) {
+        this.lotacaoId = lotacaoId;
+    }
 }

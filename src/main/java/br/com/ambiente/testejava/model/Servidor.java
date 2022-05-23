@@ -1,8 +1,6 @@
 package br.com.ambiente.testejava.model;
 
 
-import br.com.ambiente.testejava.model.dto.LotacaoDto;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.Date;
@@ -23,9 +21,8 @@ public class Servidor {
     @NotBlank
     private Lotacao lotacao;
 
-
-
     public Servidor(String nome, String matricula, Date dataCadastro, Lotacao lotacao) {
+        this.id = null;
         this.nome = nome;
         this.matricula = matricula;
         this.dataCadastro = dataCadastro;
@@ -33,22 +30,42 @@ public class Servidor {
     }
 
     public Servidor() {
-
-    }
-
-    public Date getDataCadastro() {
-        return dataCadastro;
-    }
-
-    public Lotacao getLotacao() {
-        return lotacao;
     }
 
     public String getNome() {
         return nome;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     public String getMatricula() {
         return matricula;
     }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public Date getDataCadastro() {
+        return dataCadastro;
+    }
+
+    public void setDataCadastro(Date dataCadastro) {
+        this.dataCadastro = dataCadastro;
+    }
+
+    public Lotacao getLotacao() {
+        return lotacao;
+    }
+
+    public void setLotacao(Lotacao lotacao) {
+        this.lotacao = lotacao;
+    }
+
+    public Long getId() {
+        return id;
+    }
 }
+
