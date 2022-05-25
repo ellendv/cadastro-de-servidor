@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface ServidorRepository extends JpaRepository<Servidor, Long> {
 
     Servidor findByMatricula(String matricula);
+    //.
 }
