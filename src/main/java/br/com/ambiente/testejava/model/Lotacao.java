@@ -5,6 +5,7 @@ import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
 @Entity
+@Table(name = "Lotacoes")
 public class Lotacao {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -14,9 +15,9 @@ public class Lotacao {
     private Date dataCadastro;
 
 
-    public Lotacao(String nome, Date dataCadastro) {
+    public Lotacao(String nome) {
         this.nome = nome;
-        this.dataCadastro = dataCadastro;
+        this.dataCadastro = new Date();
     }
 
     public Lotacao() {

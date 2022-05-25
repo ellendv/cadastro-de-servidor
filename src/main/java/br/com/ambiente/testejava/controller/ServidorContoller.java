@@ -3,12 +3,9 @@ package br.com.ambiente.testejava.controller;
 import br.com.ambiente.testejava.model.Servidor;
 import br.com.ambiente.testejava.model.dto.ServidorDto;
 import br.com.ambiente.testejava.service.ServidorService;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-
-import static org.springframework.http.HttpStatus.CREATED;
 
 @RestController
 @RequestMapping("/servidor")
@@ -20,10 +17,9 @@ public class ServidorContoller {
         this.servidorService = servidorService;
     }
 
-    @PostMapping("/cadastro")
-    public ResponseEntity<Servidor> cadastro(@RequestBody @Valid ServidorDto servidorDto) {
-        Servidor servidor = servidorService.cadastrarServidor(servidorDto);
-        return ResponseEntity.status(CREATED).body(servidor);
+    @PostMapping
+    public Servidor cadastro(@RequestBody @Valid ServidorDto servidorDto) {
+        return servidorService.cadastrarServidor(servidorDto);
     }
 
     @GetMapping("/{matricula}")
@@ -33,9 +29,8 @@ public class ServidorContoller {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<Servidor> atualizar(@PathVariable("id") Long id, @RequestBody @Valid ServidorDto servidorDto) {
-         Servidor servidor = servidorService.atualizarServidor(id, servidorDto);
-        return ResponseEntity.status(CREATED).body(servidor);
+    public Servidor atualizar(@PathVariable("id") Long id, @RequestBody @Valid ServidorDto servidorDto) {
+        return servidorService.atualizarServidor(id, servidorDto);
     }
 }
 

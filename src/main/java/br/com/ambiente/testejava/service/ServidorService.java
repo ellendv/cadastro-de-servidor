@@ -5,11 +5,7 @@ import br.com.ambiente.testejava.model.Servidor;
 import br.com.ambiente.testejava.model.dto.ServidorDto;
 import br.com.ambiente.testejava.repositories.LotacaoRepository;
 import br.com.ambiente.testejava.repositories.ServidorRepository;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
-
-import java.util.Calendar;
-import java.util.Optional;
 
 @Service
 public class ServidorService {
@@ -24,8 +20,7 @@ public class ServidorService {
 
     public Servidor cadastrarServidor(ServidorDto servidorDto) {
         Lotacao lotacao = lotacaoRepository.findById(servidorDto.getLotacaoId()).orElseThrow(() -> new RuntimeException("lotacão não encontrada"));
-        Calendar c = Calendar.getInstance();
-        final var servidor = new Servidor(servidorDto.getNome(), servidorDto.getMatricula(), c.getTime(), lotacao);
+        final var servidor = new Servidor(servidorDto.getNome(), servidorDto.getMatricula(), lotacao);
         return servidorRepository.save(servidor);
     }
 

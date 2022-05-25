@@ -6,6 +6,7 @@ import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
 @Entity
+@Table(name = "Servidores")
 public class Servidor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,11 +22,11 @@ public class Servidor {
     @NotBlank
     private Lotacao lotacao;
 
-    public Servidor(String nome, String matricula, Date dataCadastro, Lotacao lotacao) {
+    public Servidor(String nome, String matricula, Lotacao lotacao) {
         this.id = null;
         this.nome = nome;
         this.matricula = matricula;
-        this.dataCadastro = dataCadastro;
+        this.dataCadastro = new Date();
         this.lotacao = lotacao;
     }
 

@@ -1,17 +1,22 @@
 package br.com.ambiente.testejava.model.dto;
 
+import javax.validation.constraints.NotBlank;
 import java.util.Date;
 public class ServidorDto {
+    @NotBlank
     private String nome;
+    @NotBlank
     private String matricula;
+    @NotBlank
     private Date dataCadastro;
+    @NotBlank
     private Long lotacaoId;
 
 
-    public ServidorDto(String nome, String matricula, Date dataCadastro, Long lotacaoId) {
+    public ServidorDto(String nome, String matricula, Long lotacaoId) {
         this.nome = nome;
         this.matricula = matricula;
-        this.dataCadastro = dataCadastro;
+        this.dataCadastro = new Date();
         this.lotacaoId = lotacaoId;
     }
 
