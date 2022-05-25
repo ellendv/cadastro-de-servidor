@@ -25,6 +25,7 @@ public class LotacaoService {
     public Lotacao atualizarLotacao(Long id, LotacaoDto lotacaoDto) {
         Lotacao lotacao = lotacaoRepository.findById(id).orElseThrow(() -> new RuntimeException("lotacão não encontrada"));
         lotacao.setNome(lotacaoDto.getNome());
+        lotacaoRepository.save(lotacao);
         return lotacao;
     }
 }

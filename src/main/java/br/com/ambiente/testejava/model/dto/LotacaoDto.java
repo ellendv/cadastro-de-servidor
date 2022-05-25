@@ -9,9 +9,9 @@ public class LotacaoDto {
     @Column(columnDefinition = "datetime")
     private Date dataCadastro;
 
-    public LotacaoDto(String nome, Date dataCadastro) {
+    public LotacaoDto(String nome) {
         this.nome = nome;
-        this.dataCadastro = dataCadastro;
+        this.dataCadastro = new Date();
     }
 
     public LotacaoDto() {
