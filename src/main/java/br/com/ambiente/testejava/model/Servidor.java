@@ -3,6 +3,7 @@ package br.com.ambiente.testejava.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -20,7 +21,7 @@ public class Servidor {
     @Column(columnDefinition = "datetime")
     private Date dataCadastro;
     @ManyToOne
-    @NotBlank
+    @NotNull
     private Lotacao lotacao;
 
     public Servidor(String nome, String matricula, Lotacao lotacao) {
