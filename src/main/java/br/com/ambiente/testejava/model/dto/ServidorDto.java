@@ -1,5 +1,6 @@
 package br.com.ambiente.testejava.model.dto;
 
+import javax.persistence.Column;
 import javax.validation.constraints.NotBlank;
 import java.util.Date;
 public class ServidorDto {
@@ -7,7 +8,7 @@ public class ServidorDto {
     private String nome;
     @NotBlank
     private String matricula;
-    @NotBlank
+    @Column(columnDefinition = "datetime")
     private Date dataCadastro;
     @NotBlank
     private Long lotacaoId;

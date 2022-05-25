@@ -12,6 +12,7 @@ public class Lotacao {
     @NotBlank
     @Column(name = "descricao", length = 400)
      private String nome;
+    @Column(columnDefinition = "datetime")
     private Date dataCadastro;
 
 

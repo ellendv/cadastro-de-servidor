@@ -1,11 +1,12 @@
 package br.com.ambiente.testejava.model.dto;
 
+import javax.persistence.Column;
 import javax.validation.constraints.NotBlank;
 import java.util.Date;
 public class LotacaoDto {
     @NotBlank
     private String nome;
-    @NotBlank
+    @Column(columnDefinition = "datetime")
     private Date dataCadastro;
 
     public LotacaoDto(String nome, Date dataCadastro) {

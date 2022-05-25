@@ -17,6 +17,7 @@ public class Servidor {
     @NotBlank
     @Column(length = 30)
     private String matricula;
+    @Column(columnDefinition = "datetime")
     private Date dataCadastro;
     @ManyToOne
     @NotBlank
